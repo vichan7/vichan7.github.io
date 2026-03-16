@@ -3,30 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Victoria's Website</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      background: #f6f1e8;
-      color: #3a312b;
-    }
-    h1 { margin-bottom: 8px; }
-    .card {
-      background: white;
-      padding: 16px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      margin-top: 20px;
-    }
-    img {
-      width: 100%;
-      max-width: 400px;
-      border: 12px solid white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-    }
-  </style>
+  <title>victoria's website</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+<body>
+  <div class="container">
+    <h1 id="intro-text" aria-label="hi! i'm victoria"></h1>
+    <a href="travels/travels.html">travels</a>
+    <a href="things-ive-made.html">things i've made</a>
+  </div>
+  <script>
+    const introText = document.getElementById("intro-text");
+    const fullText = "hi! i'm victoria";
+    let charIndex = 0;
+
+    function typeNextChar() {
+      if (charIndex <= fullText.length) {
+        introText.textContent = fullText.slice(0, charIndex);
+        charIndex += 1;
+        setTimeout(typeNextChar, 95);
+      }
+    }
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      introText.textContent = fullText;
+    } else {
+      typeNextChar();
+    }
+  </script>
+</body>
 </html>
