@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>victoria's website</title>
-  <link rel="stylesheet" href="./gallery.css" />
+  <link rel="stylesheet" href="./css/gallery.css" />
 </head>
 <body class="gallery-page">
   <nav class="top-nav" aria-label="site navigation">
     <a href="index.html">home</a>
-    <span class="current-page" aria-current="page">postcards</span>
+    <a href="postcards.html" class="current-page" aria-current="page">postcards</a>
     <a href="things-ive-made.html">things i've made</a>
   </nav>
   <main class="gallery-shell">
@@ -17,18 +17,20 @@
 
     <section class="gallery-grid" aria-label="travel photos">
       <figure class="photo-card">
-        <img
-          class="photo photo--horizontal"
-          src="./images/postcards/san-juan-2026.jpg"
-          alt="San Juan postcard 2026"
-        />
+        <a class="photo-link" href="san-juan.html" aria-label="Open San Juan gallery">
+          <img
+            class="photo photo--horizontal"
+            src="./images/postcards/san-juan-2026.jpg"
+            alt=""
+          />
+        </a>
       </figure>
 
       <figure class="photo-card">
         <img
           class="photo photo--horizontal"
           src="./images/postcards/bavaria-2025.jpg"
-          alt="Bavaria postcard 2025"
+          alt=""
         />
       </figure>
 
@@ -36,7 +38,7 @@
         <img
           class="photo photo--horizontal"
           src="./images/postcards/nyc.jpg"
-          alt="Bavaria postcard 2025"
+          alt=""
         />
       </figure>
 
@@ -44,7 +46,7 @@
         <img
           class="photo photo--vertical"
           src="./images/postcards/italy-2025.jpg"
-          alt="Italy postcard 2025"
+          alt=""
         />
       </figure>
 
@@ -52,7 +54,7 @@
         <img
           class="photo photo--vertical"
           src="./images/postcards/switzerland-2025.jpg"
-          alt="Italy postcard 2025"
+          alt=""
         />
       </figure>
 
@@ -60,7 +62,7 @@
         <img
           class="photo photo--horizontal"
           src="./images/postcards/japan-2024.jpg"
-          alt="Italy postcard 2025"
+          alt=""
         />
       </figure>
 
@@ -68,7 +70,7 @@
         <img
           class="photo photo--horizontal"
           src="./images/postcards/fuzhou-2024.jpg"
-          alt="Italy postcard 2025"
+          alt=""
         />
       </figure>
 
@@ -76,7 +78,7 @@
         <img
           class="photo photo--vertical"
           src="./images/postcards/paris-2024.jpg"
-          alt="Italy postcard 2025"
+          alt=""
         />
       </figure>
 
@@ -84,7 +86,7 @@
         <img
           class="photo photo--vertical"
           src="./images/postcards/spain-2023.jpg"
-          alt="Italy postcard 2025"
+          alt=""
         />
       </figure>
 
@@ -92,11 +94,12 @@
         <img
           class="photo photo--horizontal"
           src="./images/postcards/sf.jpg"
-          alt="Italy postcard 2025"
+          alt=""
         />
       </figure>
 
     </section>
   </main>
+  <script src="./scripts/gallery-nav.js"></script>
 </body>
 </html>

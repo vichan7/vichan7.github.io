@@ -1,0 +1,150 @@
+.gallery-page {
+  --gallery-bg: #1e2a38;
+  margin: 0;
+  min-height: 100vh;
+  background: var(--gallery-bg);
+  color: #f7f1de;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+}
+
+.top-nav {
+  position: fixed;
+  top: 1.5rem;
+  right: 4vw;
+  z-index: 10;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.top-nav a,
+.top-nav .current-page {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(247, 241, 222, 0.5);
+  padding-bottom: 0.1rem;
+}
+
+.top-nav .current-page {
+  font-weight: 700;
+  border-bottom-width: 2px;
+  border-bottom-color: rgba(247, 241, 222, 0.95);
+  cursor: default;
+}
+
+.top-nav a:hover {
+  border-bottom-color: rgba(247, 241, 222, 0.9);
+}
+
+.gallery-shell {
+  width: min(1260px, 94vw);
+  margin: 0 auto;
+  padding: 5rem 0 4rem;
+}
+
+.gallery-title {
+  margin: 0 0 0.9rem;
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+}
+
+.gallery-grid {
+  columns: 320px;
+  column-gap: 2rem;
+}
+
+.gallery-grid--few {
+  columns: unset;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.gallery-grid--few .photo-card {
+  width: min(360px, 100%);
+  margin: 0;
+}
+
+.photo-card {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 2rem;
+  break-inside: avoid;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--gallery-bg);
+}
+
+.photo {
+  width: 100%;
+  display: block;
+  height: auto;
+  object-fit: contain;
+}
+
+.photo--horizontal {
+  aspect-ratio: auto;
+}
+
+.photo--vertical {
+  aspect-ratio: auto;
+}
+
+.photo-card--wide {
+  grid-column: auto;
+}
+
+.photo-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.photo-link .photo {
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.photo-link:hover .photo {
+  transform: translateY(-2px);
+  filter: brightness(0.93);
+}
+
+.photo-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 2rem 0.75rem 0.65rem;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  color: #f7f1de;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--gallery-bg) 92%, transparent) 0%,
+    color-mix(in srgb, var(--gallery-bg) 55%, transparent) 45%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.22s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.photo-card:hover .photo-caption,
+.photo-card:focus-within .photo-caption {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-caption {
+    transition: none;
+  }
+}
+
